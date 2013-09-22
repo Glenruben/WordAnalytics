@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -11,11 +12,13 @@ namespace WordAnalytics
     {
         static void Main(string[] args)
         {
-            string path = "D:\\Downloads\\lorem_ipsum.txt";
+            string filePath = "D:\\Downloads\\lorem_ipsum.txt";
 
+            StreamReader fileToAnalyze = new StreamReader( filePath );
+
+            string fullText = fileToAnalyze.ReadToEnd();
             
-            
-            System.Console.WriteLine("Hello whatever");
+            System.Console.Write( fullText );
 
             System.Console.Read();
 
