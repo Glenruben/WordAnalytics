@@ -20,7 +20,7 @@ namespace WordAnalytics
 
             System.Console.WriteLine("This document contains {0} words", WordCounter.countResult(fullText) );
 
-            //System.Console.Write( fullText );
+            System.Console.WriteLine("This document contains {0} letters.", LetterCounter.countResult(fullText));
 
 
             System.Console.Read();
