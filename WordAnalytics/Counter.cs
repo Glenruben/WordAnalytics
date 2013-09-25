@@ -25,6 +25,17 @@ namespace WordAnalytics
             return counter.Count;
         }
 
+        public static int SymbolCounter( string s )
+        {
+            MatchCollection counter = Regex.Matches( s, @"\S" );
+            return counter.Count;
+        }
+
+        public static int WhitespaceAndSymbolCounter( string s )
+        {
+            MatchCollection counter = Regex.Matches( s, @"\S|\s" );
+            return counter.Count;
+        }
 
         //public string Text
         //{

@@ -22,7 +22,9 @@ namespace WordAnalytics
 
             System.Console.WriteLine("This document contains {0} letters.", Counter.LetterCounter(fullText));
 
+            System.Console.WriteLine( "This document contains {0} letters and symbols excluding whitespace.", Counter.SymbolCounter( fullText ) );
 
+            System.Console.WriteLine( "This document contains {0} letters and symbols including whitespace.", Counter.WhitespaceAndSymbolCounter( fullText ) );
 
             System.Console.Read();
 
