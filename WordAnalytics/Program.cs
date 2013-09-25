@@ -18,9 +18,10 @@ namespace WordAnalytics
 
             string fullText = fileToAnalyze.ReadToEnd();
 
-            System.Console.WriteLine("This document contains {0} words", WordCounter.countResult(fullText) );
+            System.Console.WriteLine("This document contains {0} words", Counter.WordCounter(fullText) );
 
-            System.Console.WriteLine("This document contains {0} letters.", LetterCounter.countResult(fullText));
+            System.Console.WriteLine("This document contains {0} letters.", Counter.LetterCounter(fullText));
+
 
 
             System.Console.Read();

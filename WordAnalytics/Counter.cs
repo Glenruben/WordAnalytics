@@ -7,16 +7,22 @@ using System.Threading.Tasks;
 
 namespace WordAnalytics
 {
-    class WordCounter
+    class Counter
     {
         string inputText;
 
-        public static int countResult(string s)
+        public static int WordCounter(string s)
         {
 
         MatchCollection counter = Regex.Matches(s, @"[\S]+");
         return counter.Count;
 
+        }
+
+        public static int LetterCounter( string s )
+        {
+            MatchCollection counter = Regex.Matches( s, @"\p{L}" );
+            return counter.Count;
         }
 
 
