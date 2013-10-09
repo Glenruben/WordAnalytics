@@ -9,27 +9,44 @@ namespace WordAnalytics
 {
     class WordUse
     {
-        public Array mostUsed( string s )
+        public static Array MostUsed(string s)
         {
-            
-            MatchCollection collection = Regex.Matches( s.ToLower(), @"[\S]+"); //collection of words in text, case ignored. TODO: Find unique words and count instances!
 
-            List<string> collectionList = new List<string>;
+            MatchCollection collection = Regex.Matches(s.ToLower(), @"[\S]+"); /* 
+                                                                                * collection of words in text, made into lowercase
+                                                                                * and stripped of non-character symbols. 
+                                                                                * TODO:return two dimentional array with [uniqueWord,count] 
+                                                                                * and SORT BY COUNT
+                                                                                */
 
-            foreach (Match match in collection)
+            List<string> textArray = new List<string>();
+
+            foreach (Match i in collection)
             {
-                collectionList.Add(match);
+                textArray.Add(i.ToString());
             }
 
-            string wordString = collection.ToString();
+            //List<String> result = new List<string>;
+            string[] result;
+            try
+            {
 
-            
+                result = textArray.GroupBy(x => x)
+                    .Where(g => g.Count() > 1)
+                    .Select(g => g.Key)
+                    .ToArray();
+                    
+            }
+            catch (Exception e)
+            {
+                
+                throw;
+            }
+            return result;
 
-            List<String> counter = wordString.GroupBy(x => x)
-                                            .Where(g => g.Count() > 1)
-                                            .Select(g => g.Key)
-                                            .ToList();
 
         }
+
+
     }
 }

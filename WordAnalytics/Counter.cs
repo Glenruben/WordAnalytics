@@ -9,8 +9,7 @@ namespace WordAnalytics
 {
     class Counter
     {
-        string inputText;
-
+        
         public static int WordCounter(string s)
         {
 
